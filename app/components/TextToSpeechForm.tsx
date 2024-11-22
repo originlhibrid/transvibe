@@ -47,39 +47,40 @@ export default function TextToSpeechForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       <div className="space-y-2">
-        <Label htmlFor="text">Text to convert</Label>
+        <Label htmlFor="text" className="text-gray-700 dark:text-gray-300">Text to convert</Label>
         <Textarea
           id="text"
           value={text}
           onChange={(e) => setText(e.target.value)}
           placeholder="Enter text to convert to speech..."
-          className="w-full h-32"
+          className="w-full h-32 bg-white dark:bg-gray-700 text-gray-900 dark:text-white border-gray-300 dark:border-gray-600"
           required
         />
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="apiKey">OpenAI API Key</Label>
+        <Label htmlFor="apiKey" className="text-gray-700 dark:text-gray-300">OpenAI API Key</Label>
         <Input
           id="apiKey"
           type="password"
           value={apiKey}
           onChange={(e) => setApiKey(e.target.value)}
           placeholder="Enter your OpenAI API key"
+          className="bg-white dark:bg-gray-700 text-gray-900 dark:text-white border-gray-300 dark:border-gray-600"
           required
         />
       </div>
 
       <div className="space-y-2">
-        <Label>Voice</Label>
+        <Label className="text-gray-700 dark:text-gray-300">Voice</Label>
         <RadioGroup value={voice} onValueChange={setVoice} className="flex space-x-4">
           <div className="flex items-center space-x-2">
             <RadioGroupItem value="male" id="male" />
-            <Label htmlFor="male">Male</Label>
+            <Label htmlFor="male" className="text-gray-700 dark:text-gray-300">Male</Label>
           </div>
           <div className="flex items-center space-x-2">
             <RadioGroupItem value="female" id="female" />
-            <Label htmlFor="female">Female</Label>
+            <Label htmlFor="female" className="text-gray-700 dark:text-gray-300">Female</Label>
           </div>
         </RadioGroup>
       </div>
